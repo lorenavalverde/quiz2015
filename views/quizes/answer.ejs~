@@ -6,7 +6,7 @@
        <body>
          <h2>QUIZ: Juego de respuestas</h2>
 	Respuesta: <%= respuesta %> <br>
-        <p><a href=/quizes/question>Intentelo de nuevo</a>
+        <p><a href=/quizes/question>Comience a jugar</a>
         </p>
        </body>
 </html>
