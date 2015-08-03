@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html><head>
-        <meta charset="UTF-8"><title>QUIZ</title>
-        <link rel='stylesheet' href='/stylesheets/style.css'/>
-       </head>
-       <body>
-         <h2>QUIZ: Juego de respuestas</h2>
-	Respuesta: <%= respuesta %> <br>
-        <p><a href=/quizes/question>Comience a jugar</a>
-        </p>
-       </body>
-</html>
-
+  <p>
+    <%= respuesta %>
+    <a href="/quizes/<%= quiz.id %>">Volver</a>
+  </p>
