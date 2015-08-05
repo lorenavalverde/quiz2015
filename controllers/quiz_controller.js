@@ -19,7 +19,7 @@ models.Quiz.find({
  
  // GET /quizes
  exports.index = function(req, res) {
- //búsqueda
+ //Buscar con expresion y ordenado
    var inputValueSearch = (req.query.search || "texto_a_buscar");
    var search = '%';
    
