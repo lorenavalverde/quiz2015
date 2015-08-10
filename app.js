@@ -29,6 +29,26 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+app.use(function(req,res,next){
+    if(req.session.user){
+         var time = new Date().getTime();
+         var minute = 2000 * 60;
+      if(req.session.user.iniciaSession){
+        if((time - (new Date(req.session.user.iniciaSession)))>minute){
+          delete req.session.user;
+          next();
+          return;
+        }
+      }
+      req.session.user.iniciaSession= new Date();
+        }
+        next();
+});
+
+
+
+
+
 //Helpers dinamicos
 app.use(function(req, res, next) {
 
@@ -76,6 +96,8 @@ app.use(function(err, req, res, next) {
         errors: []
     });
 });
+
+
 
 
 module.exports = app;
